@@ -1,0 +1,7 @@
+Flask
+Flask-Cors
+langchain
+openai
+pinecone-client
+beautifulsoup4
+gunicorn

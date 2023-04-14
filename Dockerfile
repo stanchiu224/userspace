@@ -40,7 +40,12 @@ RUN \
         git git-doc \
         zsh \
         docker \
-        docker-compose
+        docker-compose \
+	python3 \
+        python3-dev \
+        nodejs \
+        npm \
+        yarn
 
 
 RUN \
@@ -59,6 +64,9 @@ RUN \
     # cd /home/${user}/.dotfiles && \
     # git remote set-url origin git@${vcsprovider}:${vcsowner}/${dotfiles}
 
+# Azure-CLI installation command
+RUN	curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+
 USER ${user}
 
 RUN \
@@ -70,6 +78,9 @@ RUN \
         zsh-plugins \
         vim-dependencies \
         vim-plugins 
+
+COPY requirements.txt /tmp/requirements.txt
+RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
 
 
 ENV HISTFILE=/config/.history
