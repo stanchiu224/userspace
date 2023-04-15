@@ -1,0 +1,15 @@
+{
+  "build": { "dockerfile": "Dockerfile" },
+  
+  "settings": {
+    "terminal.integrated.shell.linux": "/usr/bin/zsh"
+  },
+  
+  "extensions": [
+    "gruntfuggly.todo-tree",
+    "ms-python.black-formatter",
+    "github.copilot",
+    "charliermarsh.ruff",
+    "vscodevim.vim"
+  ]
+}

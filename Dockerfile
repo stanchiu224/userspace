@@ -67,6 +67,8 @@ RUN \
 # Azure-CLI installation command
 RUN	curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
+RUN apk add --no-cache zsh
+
 USER ${user}
 
 RUN \
